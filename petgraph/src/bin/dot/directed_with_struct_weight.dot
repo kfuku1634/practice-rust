@@ -1,0 +1,6 @@
+digraph {
+    0 [label="MyWeight { weight: 4, name: \"a\" }"]
+    1 [label="MyWeight { weight: 10, name: \"b\" }"]
+    0 -> 1 [label="()"]
+}
+
