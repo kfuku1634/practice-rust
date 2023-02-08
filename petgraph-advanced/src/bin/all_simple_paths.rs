@@ -1,6 +1,6 @@
+use itertools::Itertools;
 use petgraph::algo;
 use petgraph::prelude::*;
-use itertools::Itertools;
 
 fn main() {
     let mut graph: Graph<String, (), Undirected> = Graph::new_undirected();
@@ -27,12 +27,12 @@ fn main() {
         (h, e),
     ]);
 
-// a ----- b ----- e ----- f
-// |       |       |       |
-// |       |       |       |
-// d ----- c       h ----- g
+    // a ----- b ----- e ----- f
+    // |       |       |       |
+    // |       |       |       |
+    // d ----- c       h ----- g
 
-let res: Vec<Vec<_>> = algo::all_simple_paths(&graph, c, g, 1, None).collect();
+    let res: Vec<Vec<_>> = algo::all_simple_paths(&graph, c, g, 1, None).collect();
 
     for i in res {
         i.iter()
