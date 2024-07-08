@@ -4,8 +4,8 @@ fn main() {
 
     let a = [10, 11, 13, 13, 15];
 
-    // lower_bound: a[i] <  x を満たす最初のi
-    // upper_bound: a[i] <= x を満たす最初のi
+    // lower_bound: x以上を満たす最初のi
+    // upper_bound: xより大きいを満たす最初のi
     assert_eq!(a.lower_bound(&9), 0);
     assert_eq!(a.upper_bound(&9), 0);
 

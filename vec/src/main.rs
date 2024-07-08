@@ -64,5 +64,25 @@ fn main() {
     let s = vec![0, 1, 1, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
     let idx = s.binary_search(&13).unwrap();
     assert_eq!(idx, 9);
-    assert_eq!(idx, s.upper_bound(&13));
+    assert_eq!(idx, s.lower_bound(&13));
+
+    let s = vec!['a','b','c','d','e'];
+    let mut it = s.chunks(2);
+    assert_eq!( it.next().unwrap(), &['a', 'b']);
+    assert_eq!( it.next().unwrap(), &['c', 'd']);
+    assert_eq!( it.next().unwrap(), &['e']);
+    assert!( it.next().is_none());
+
+    let a = vec![1,2];
+    let b = vec![3,4];
+    assert_eq!([a,b].concat(), vec![1,2,3,4]);
+
+    let a = vec![ vec![1,2], vec![3,4]];
+    assert_eq!(a.concat(), vec![1,2,3,4]);
+
+    let s = vec![ "hello", "world"];
+    assert_eq!( s.join(" "), "hello world");
+
+    let a = [2, 4, 7];
+    assert!(a.contains(&4)); // slower than binary_search when slice is sorted.
 }
